@@ -9,6 +9,7 @@ import com.Controller.Ui.SupplierUi;
 import com.Controller.Ui.ItemsUi;
 import com.Controller.Ui.CustomerUi;
 import com.Controller.Ui.UserUi;
+import com.database.utility.DBAccessUtility;
 /**
  *
  * @author W10
@@ -19,6 +20,7 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public MainFrame() {
+       
         initComponents();
     }
 CompanyUi companyUi=new CompanyUi();
@@ -26,6 +28,7 @@ SupplierUi supplierui=new SupplierUi();
 ItemsUi itemui=new ItemsUi();
 CustomerUi customerui=new CustomerUi();
 UserUi userui=new UserUi();
+DBAccessUtility accDb=new DBAccessUtility();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,6 +132,7 @@ UserUi userui=new UserUi();
 
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
         // TODO add your handling code here:
+         accDb.DBAccessUtility1 ();
         desktopPane.validate();
         desktopPane.repaint();
         itemui.setVisible(true);
@@ -139,6 +143,7 @@ UserUi userui=new UserUi();
 
     private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
           companyUi.setVisible(true);
+          
     }//GEN-LAST:event_cutMenuItemActionPerformed
 
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
