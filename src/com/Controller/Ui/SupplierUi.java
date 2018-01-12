@@ -5,12 +5,15 @@
  */
 package com.Controller.Ui;
 
+import com.model.Supplier;
+
 /**
  *
  * @author W10
  */
 public class SupplierUi extends javax.swing.JInternalFrame {
-
+    
+    
     /**
      * Creates new form SupplierUi
      */
@@ -18,7 +21,21 @@ public class SupplierUi extends javax.swing.JInternalFrame {
         initComponents();
     }
     
-
+    public boolean validateSupplier(){
+       if(firmTxt.getText()==null||firmTxt.getText().equals("")){
+           firmTxt.setToolTipText("Please enter firm Name");
+           return false;
+       } 
+       if(ownerTxt.getText()==null||firmTxt.getText().equals("")){
+           ownerTxt.setToolTipText("Please enter owner Name");
+           
+           return false;
+       }
+       
+        return true;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -140,6 +157,11 @@ public class SupplierUi extends javax.swing.JInternalFrame {
         });
 
         submitBtn.setText("Submit");
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtnActionPerformed(evt);
+            }
+        });
 
         clearBtn.setText("Clear");
         clearBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -327,6 +349,23 @@ public class SupplierUi extends javax.swing.JInternalFrame {
     private void gstTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gstTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_gstTxtActionPerformed
+
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+        // TODO add your handling code here:
+        
+        if(!validateSupplier()){
+            return;
+        }
+      
+        Supplier supplier= new Supplier();
+        supplier.setFirmName(firmTxt.getText());
+        supplier.setOwnerName(ownerTxt.getText());
+        supplier.setAddress(addressTxt.getText());
+        supplier.setGstin(gstTxt.getText());
+        supplier.setState((String)stateCombo.getSelectedItem());
+        supplier.setStateCode(stateCodeTxt.getText());
+        supplier.setPanNo(panTxt.getText());
+    }//GEN-LAST:event_submitBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
