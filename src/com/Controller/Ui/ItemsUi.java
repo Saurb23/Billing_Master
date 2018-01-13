@@ -6,6 +6,7 @@
 package com.Controller.Ui;
 import com.model.Item;
 import com.DataAccessObject.ItemDAO;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -276,16 +277,14 @@ public class ItemsUi extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(811, Short.MAX_VALUE))
+                .addGap(0, 870, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addGap(0, 107, Short.MAX_VALUE))
         );
 
         pack();
@@ -300,7 +299,11 @@ public class ItemsUi extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_purchaseprice_txtActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        SubmitItemEntry();
+        try {
+            SubmitItemEntry();
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemsUi.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
@@ -343,30 +346,25 @@ public class ItemsUi extends javax.swing.JInternalFrame {
 
         return VFalg;
     }
-    private void SubmitItemEntry() {
-        try {
-            if(!validatItemForm()){
-                
-            }
-            item.setItemname(itemname_txt.getText());
-            item.setHsn(hsnCode_txt.getText());
-            item.setUnit(unit_txt.getText());
-            item.setStyle(style_txt.getText());
-            item.setColor(color_txt.getText());
-            item.setSize(size_txt.getText());
-            item.setGroup(group_txt.getText());
-            item.setSubgroup(subgroup_txt.getText());
-            item.setGstPer(gst_ComboBox.getSelectedItem().toString());
-            item.setGstgroup(gstGroup_combobox.getSelectedItem().toString());
-            item.setSellingprice(Integer.parseInt(sellingPrice_txt.getText()));
-            item.setBarcode(barcode_txt.getText());
-            item.setPurchaseprice(Integer.parseInt(purchaseprice_txt.getText()));
-            item.setOpeningstock(Integer.parseInt(openningStock_txt.getText()));
+    private void SubmitItemEntry() throws SQLException {
+        if(!validatItemForm()){
             
-         boolean addProduct = itemdao.addProduct(item);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ItemsUi.class.getName()).log(Level.SEVERE, null, ex);
         }
+        item.setItemname(itemname_txt.getText());
+        item.setHsn(hsnCode_txt.getText());
+        item.setUnit(unit_txt.getText());
+        item.setStyle(style_txt.getText());
+        item.setColor(color_txt.getText());
+        item.setSize(size_txt.getText());
+        item.setGroup(group_txt.getText());
+        item.setSubgroup(subgroup_txt.getText());
+        item.setGstPer((String)gst_ComboBox.getSelectedItem());
+        item.setGstgroup((String)gstGroup_combobox.getSelectedItem());
+        item.setSellingprice(Double.parseDouble(sellingPrice_txt.getText()));
+        item.setBarcode(barcode_txt.getText());
+        item.setPurchaseprice(Double.parseDouble(purchaseprice_txt.getText()));
+        item.setOpeningstock(Double.parseDouble(openningStock_txt.getText()));
+        itemdao.addProduct(item);
     
 
     } 

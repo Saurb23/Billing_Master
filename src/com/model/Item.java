@@ -11,7 +11,7 @@ package com.model;
  */
 public class Item {
 
-    public Item(String Itemname, String hsn, String unit, String style, String color, String size, String group, String subgroup, String gstPer, String gstgroup, int sellingprice, String barcode, int purchaseprice, int openingstock) {
+    public Item(String Itemname, String hsn, String unit, String style, String color, String size, String group, String subgroup, String gstPer, String gstgroup, double sellingprice, String barcode, double purchaseprice, double openingstock) {
         this.Itemname = Itemname;
         this.hsn = hsn;
         this.unit = unit;
@@ -40,6 +40,7 @@ public class Item {
     public void setItemname(String Itemname) {
         this.Itemname = Itemname;
     }
+    long Id;
      String hsn;
     String unit;
     String style;
@@ -49,10 +50,10 @@ public class Item {
     String subgroup;
     String gstPer;
     String gstgroup;
-    int sellingprice;
+    double sellingprice;
     String barcode;
-    int purchaseprice;
-    int openingstock;
+    double purchaseprice;
+    double openingstock;
 
     public String getHsn() {
         return hsn;
@@ -126,11 +127,11 @@ public class Item {
         this.gstgroup = gstgroup;
     }
 
-    public int getSellingprice() {
+    public double getSellingprice() {
         return sellingprice;
     }
 
-    public void setSellingprice(int sellingprice) {
+    public void setSellingprice(double sellingprice) {
         this.sellingprice = sellingprice;
     }
 
@@ -142,19 +143,19 @@ public class Item {
         this.barcode = barcode;
     }
 
-    public int getPurchaseprice() {
+    public double getPurchaseprice() {
         return purchaseprice;
     }
 
-    public void setPurchaseprice(int purchaseprice) {
+    public void setPurchaseprice(double purchaseprice) {
         this.purchaseprice = purchaseprice;
     }
 
-    public int getOpeningstock() {
+    public double getOpeningstock() {
         return openingstock;
     }
 
-    public void setOpeningstock(int openingstock) {
+    public void setOpeningstock(double openingstock) {
         this.openingstock = openingstock;
     }
 }
