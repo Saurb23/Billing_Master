@@ -24,9 +24,9 @@ public class CustomerDAO {
                + "contactNo3,gstin,email,dob,annivarsaryDate,profession,pincode,bankName,ifsc,AccNo,BankBranch,openingBalance)"+
 					" values('"+customer.getCustName()+"','"+customer.getAdress()+"','"+customer.getCityName()+"','"+
 					customer.getAreaCode()+"','"+customer.getState()+"','"+customer.getStateCode()+"','"+customer.getContactNo1()+"','"+
-               customer.getContactNo2()+"','"+customer.getContactNo3()+"','"+customer.getGstin()+"','"+customer.getEmail()+"','"+customer.getDob()+"','"+
-               customer.getAnnivarsaryDate()+"','"+customer.getProfession()+"',"+customer.getPincode()+",'"+customer.getBankName()+"',"+customer.getIfsc()+",'"+
-               customer.getAccNo()+"','"+customer.getBankBranch()+"',,"+customer.getOpeningBalance()+")";
+               customer.getContactNo2()+"','"+customer.getContactNo3()+"','"+customer.getGstin()+"','"+customer.getEmail()+"',#"+customer.getDob()+"#,#"+
+               customer.getAnnivarsaryDate()+"#,'"+customer.getProfession()+"',"+customer.getPincode()+",'"+customer.getBankName()+"','"+customer.getIfsc()+"','"+
+               customer.getAccNo()+"','"+customer.getBankBranch()+"',"+customer.getOpeningBalance()+")";
         try {
             DBAccessUtility.dbExecuteUpdate(stmt);
             result=true;
