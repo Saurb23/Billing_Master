@@ -8,6 +8,7 @@ package com.Controller.Ui;
 import com.DataAccessObject.supplierDAO;
 import com.model.Supplier;
 import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,20 +22,51 @@ public class SupplierUi extends javax.swing.JInternalFrame {
      */
     public SupplierUi() {
         initComponents();
-        creditBtn.setSelected(true);
         groupButoon();
+        creditBtn.setSelected(true);
+        
     }
     
     public boolean validateSupplier(){
        if(firmTxt.getText()==null||firmTxt.getText().equals("")){
-           firmTxt.setToolTipText("Please enter firm Name");
+           JOptionPane.showMessageDialog(null, "Please enter firm Name");
            return false;
        } 
        if(ownerTxt.getText()==null||firmTxt.getText().equals("")){
-           ownerTxt.setToolTipText("Please enter owner Name");
+            JOptionPane.showMessageDialog(null,"Please enter owner Name");
            
            return false;
        }
+       if(addressTxt.getText()==null||addressTxt.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Please enter address");
+           return false;
+       }
+       
+       if(gstTxt.getText()!=null){
+           if(gstTxt.getText().length()>15){
+            JOptionPane.showMessageDialog(null,"Please enter correct 15 digit GSTIN");
+           return false;
+           }
+       }
+       
+      if(panTxt.getText()==null||panTxt.getText().equals("'")){
+          JOptionPane.showMessageDialog(null,"Please enter PAN No");
+          return false;
+      }
+       
+      if(openBalTxt.getText()==null||openBalTxt.getText().equals("")){
+          JOptionPane.showMessageDialog(null,"Please enter opening Balance");
+          return false;
+      }
+      if(!openBalTxt.getText().matches("^[0-9]*\\.?[0-9]*$")){
+         JOptionPane.showMessageDialog(null,"Opening Balance must be 0 or greater than 0");
+         return false;
+      }
+      if(comCodeTxt.getText()==null||comCodeTxt.getText().equals("")){
+           JOptionPane.showMessageDialog(null,"Please enter Company Code");
+          return false;
+      }
+      
        
         return true;
     }

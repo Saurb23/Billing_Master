@@ -8,6 +8,7 @@ import com.Controller.Ui.CompanyUi;
 import com.Controller.Ui.SupplierUi;
 import com.Controller.Ui.ItemsUi;
 import com.Controller.Ui.CustomerUi;
+import com.Controller.Ui.SalesmanUi;
 import com.Controller.Ui.UserUi;
 import com.database.utility.DBAccessUtility;
 /**
@@ -29,6 +30,8 @@ ItemsUi itemui=new ItemsUi();
 CustomerUi customerui=new CustomerUi();
 UserUi userui=new UserUi();
 DBAccessUtility accDb=new DBAccessUtility();
+    SalesmanUi salesmanUi= new SalesmanUi();
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,6 +50,8 @@ DBAccessUtility accDb=new DBAccessUtility();
         saveMenuItem = new javax.swing.JMenuItem();
         saveAsMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
+        salesManMenu = new javax.swing.JMenu();
+        addSalesManItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +109,18 @@ DBAccessUtility accDb=new DBAccessUtility();
         fileMenu.add(exitMenuItem);
 
         menuBar.add(fileMenu);
+
+        salesManMenu.setText("SalesMan");
+
+        addSalesManItem.setText("Add SalesMan");
+        addSalesManItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addSalesManItemActionPerformed(evt);
+            }
+        });
+        salesManMenu.add(addSalesManItem);
+
+        menuBar.add(salesManMenu);
 
         setJMenuBar(menuBar);
 
@@ -165,6 +182,17 @@ DBAccessUtility accDb=new DBAccessUtility();
         desktopPane.validate();
     }//GEN-LAST:event_saveAsMenuItemActionPerformed
 
+    private void addSalesManItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSalesManItemActionPerformed
+        // TODO add your handling code here:
+         desktopPane.validate();
+         desktopPane.repaint();
+        salesmanUi.setVisible(true);
+        desktopPane.add(salesmanUi);
+        desktopPane.repaint();
+        desktopPane.validate();
+        
+    }//GEN-LAST:event_addSalesManItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -201,6 +229,7 @@ DBAccessUtility accDb=new DBAccessUtility();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem addSalesManItem;
     private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
@@ -208,6 +237,7 @@ DBAccessUtility accDb=new DBAccessUtility();
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
+    private javax.swing.JMenu salesManMenu;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables

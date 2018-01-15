@@ -63,16 +63,18 @@ public class DBAccessUtility {
             doConnection();
             System.out.println("Statement "+sqlStmt+"\n");
             //Create Statement
+           
             stmt = con.createStatement();
+             System.out.println(stmt);
             //Run executeUpdate operation with given sql statement
             count=stmt.executeUpdate(sqlStmt);
         } catch (SQLException e) {
             System.out.println("Problem occurred at executeUpdate operation : " + e);
             e.printStackTrace();
         } finally {
-            if (stmt != null) {
+            if (st != null) {
                 //Close statement
-                stmt.close();
+                st.close();
             }
             //Close connection
             dbDisconnect();
