@@ -22,9 +22,9 @@ public class SupplierUi extends javax.swing.JInternalFrame {
      */
     public SupplierUi() {
         initComponents();
-        
-        creditBtn.setSelected(true);
         groupButoon();
+        creditBtn.setSelected(true);
+        
     }
     
     public boolean validateSupplier(){

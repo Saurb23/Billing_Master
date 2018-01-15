@@ -5,6 +5,7 @@
  */
 package com.model;
 
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Date;
 
@@ -18,7 +19,7 @@ public class SalesMan {
     String address;
     String contactNo;
     String idNo;
-    InputStream idProof;
+    String idProof;
     String desgination;
     String bankName;
     String ifsc;
@@ -26,7 +27,13 @@ public class SalesMan {
     String bankBranch;
     double backHand;
     double openingBalance;
-    InputStream photo;
+    String credit_debit;
+
+   
+    String photo;
+    Date joiningDate;
+    Date dob;
+    
 
     public long getId() {
         return id;
@@ -68,13 +75,6 @@ public class SalesMan {
         this.idNo = idNo;
     }
 
-    public InputStream getIdProof() {
-        return idProof;
-    }
-
-    public void setIdProof(InputStream idProof) {
-        this.idProof = idProof;
-    }
 
     public String getDesgination() {
         return desgination;
@@ -132,14 +132,7 @@ public class SalesMan {
         this.openingBalance = openingBalance;
     }
 
-    public InputStream getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(InputStream photo) {
-        this.photo = photo;
-    }
-
+   
     public Date getJoiningDate() {
         return joiningDate;
     }
@@ -155,9 +148,30 @@ public class SalesMan {
     public void setDob(Date dob) {
         this.dob = dob;
     }
-    Date joiningDate;
-    Date dob;
+
+    public String getIdProof() {
+        return idProof;
+    }
+
+    public void setIdProof(String idProof) {
+        this.idProof = idProof;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
     
-            
-            
+    
+       
+     public String getCredit_debit() {
+        return credit_debit;
+    }
+
+    public void setCredit_debit(String credit_debit) {
+        this.credit_debit = credit_debit;
+    }        
 }
