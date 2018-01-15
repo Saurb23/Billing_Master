@@ -149,7 +149,7 @@ DBAccessUtility accDb=new DBAccessUtility();
 
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
         // TODO add your handling code here:
-         accDb.DBAccessUtility1 ();
+       
         desktopPane.validate();
         desktopPane.repaint();
         itemui.setVisible(true);
@@ -204,7 +204,7 @@ DBAccessUtility accDb=new DBAccessUtility();
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

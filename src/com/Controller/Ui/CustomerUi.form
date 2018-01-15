@@ -2,8 +2,13 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-      <Border info="null"/>
+      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+        <TitledBorder title="Customer Creation"/>
+      </Border>
     </Property>
     <Property name="resizable" type="boolean" value="true"/>
   </Properties>
@@ -25,10 +30,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="264" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="883" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -36,214 +40,185 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="48" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="160" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder justification="1" title="Customer Creation">
+              <Font PropertyName="font" name="Calibri" size="14" style="1"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="state_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="IFSCcode_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="branch_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="acno_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="bankname_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="pincode_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="proffesion_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="gstno_lbl" min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="contactno3_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="contactno1_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="statecode_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="DOB_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="areacode_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="cityname_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="contactno3_lbl" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="contactno2_lbl" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="gstno_lbl" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="contactno1_lbl" min="-2" max="-2" attributes="0"/>
-                                      <Component id="statecode_lbl" min="-2" max="-2" attributes="0"/>
-                                      <Component id="address_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Custname_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cityname_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="areacode_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="state_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="mailid_lbl" min="-2" pref="42" max="-2" attributes="0"/>
-                              <Component id="pincode_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="bankname_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="branch_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="DOB_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="acno_lbl" min="-2" max="-2" attributes="0"/>
-                              <Component id="IFSCcode_lbl" min="-2" max="-2" attributes="0"/>
-                              <Component id="bankDetails_lbl" min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="proffesion_lbl" min="-2" max="-2" attributes="0"/>
+                              <Component id="Custname_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="address_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="contactno2_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="mailid_lbl" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Component id="address_txt" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="custname_txt" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="cityname_txt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="areacode_txt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="state_combobox" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="statecode_txt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="contactno1_txt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="contactno2_txt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="contactno3_txt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="gstno_txt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="maildid_txt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="Dob_DatePicker" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="AnniversaryDob_DatePicker" min="-2" pref="92" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="proffesion_txt" alignment="0" min="-2" pref="214" max="-2" attributes="0"/>
+                              <Component id="pincode_txt" alignment="0" min="-2" pref="214" max="-2" attributes="0"/>
+                              <Component id="bankname_txt" alignment="0" min="-2" pref="214" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="address_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="custname_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="cityname_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="areacode_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="state_combobox" alignment="0" pref="213" max="32767" attributes="0"/>
-                                      <Component id="statecode_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="contactno1_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="contactno2_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="contactno3_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="gstno_txt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="maildid_txt" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="branch_txt" max="32767" attributes="0"/>
+                                  <Component id="Submit_btn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="clear_btn" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="Cr_btn" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                          <Component id="Dr_btn" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="openBal_Txt" min="-2" pref="132" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="pincode_txt" alignment="0" pref="214" max="32767" attributes="0"/>
-                                          <Component id="proffesion_txt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="bankname_txt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="Ifsccode_txt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="acno_txt" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Cr_btn" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="Dr_btn" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="openBal_Txt" pref="128" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="clear_btn" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="Submit_btn" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="69" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="branch_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="acno_txt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Ifsccode_txt" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Custname_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="custname_txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Custname_lbl" min="-2" max="-2" attributes="0"/>
-                      <Component id="custname_txt" min="-2" max="-2" attributes="0"/>
+                      <Component id="address_txt" min="-2" max="-2" attributes="0"/>
+                      <Component id="address_lbl" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="address_txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="address_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cityname_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cityname_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cityname_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="areacode_lbl" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="areacode_txt" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="areacode_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="state_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="state_combobox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="statecode_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="statecode_txt" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="statecode_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="contactno1_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="contactno1_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="contactno2_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="contactno2_txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="contactno3_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="contactno3_txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="gstno_txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="gstno_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="branch_txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="maildid_txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="mailid_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="DOB_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Dob_DatePicker" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AnniversaryDob_DatePicker" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="contactno2_txt" min="-2" max="-2" attributes="0"/>
+                      <Component id="contactno2_lbl" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="contactno3_lbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="contactno3_txt" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="gstno_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="gstno_txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="maildid_txt" min="-2" max="-2" attributes="0"/>
+                      <Component id="mailid_lbl" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="DOB_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Dob_DatePicker" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="AnniversaryDob_DatePicker" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="proffesion_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="proffesion_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="pincode_txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="pincode_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bankDetails_lbl" min="-2" pref="23" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="Submit_btn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="bankname_txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pincode_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pincode_txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="bankname_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bankname_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="IFSCcode_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Ifsccode_txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="clear_btn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -253,13 +228,21 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="branch_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="openBal_Txt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Dr_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Cr_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="branch_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="57" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Cr_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Dr_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="openBal_Txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Submit_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clear_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -267,77 +250,114 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="Custname_lbl">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cx Name"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Customer Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="address_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Address"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cityname_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="City Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="areacode_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Area Code"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="state_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="State"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="statecode_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="State Code"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="contactno1_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Contact No 1"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="contactno2_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Contact No 2"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="contactno3_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Contact No 3"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="bankDetails_lbl">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Bank Deatils"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="bankname_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Bank Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="IFSCcode_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="IFSC Code"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="acno_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="A/C No"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="branch_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Branch"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="address_txt">
         </Component>
         <Component class="javax.swing.JTextField" name="custname_txt">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="custname_txtActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="cityname_txt">
         </Component>
@@ -365,6 +385,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="Submit_btn">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Submit"/>
           </Properties>
           <Events>
@@ -373,6 +396,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="clear_btn">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Clear"/>
           </Properties>
           <Events>
@@ -396,6 +422,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="gstno_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Gst No"/>
           </Properties>
         </Component>
@@ -403,6 +432,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="mailid_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Mail Id"/>
           </Properties>
         </Component>
@@ -413,6 +445,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="DOB_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="DOB"/>
           </Properties>
         </Component>
@@ -420,6 +455,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="proffesion_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Proffesion "/>
           </Properties>
         </Component>
@@ -427,6 +465,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="pincode_lbl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Pin Code"/>
           </Properties>
         </Component>
@@ -436,11 +477,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Anniversary DOB"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="OpenningBalance"/>
           </Properties>
         </Component>
@@ -451,6 +498,9 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="Cr_btn">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Cr."/>
           </Properties>
           <Events>
@@ -459,6 +509,9 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="Dr_btn">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Dr."/>
           </Properties>
         </Component>

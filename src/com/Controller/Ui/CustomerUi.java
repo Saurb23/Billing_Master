@@ -8,6 +8,8 @@ import com.model.Customer;
 import java.sql.Date;
 import javax.swing.ButtonGroup;
 import com.DataAccessObject.CustomerDAO;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -40,14 +42,45 @@ public class CustomerUi extends javax.swing.JInternalFrame {
      
       public boolean validateCustomer(){
        if(custname_txt.getText()==null||custname_txt.getText().equals("")){
-           custname_txt.setToolTipText("Please enter firm Name");
+            JOptionPane.showMessageDialog(this,"Please enter Customer Nane");
            return false;
        } 
        if(address_txt.getText()==null||address_txt.getText().equals("")){
-           address_txt.setToolTipText("Please enter owner Name");
+           JOptionPane.showMessageDialog(this,"Please enter Address");
            
            return false;
        }
+        if(cityname_txt.getText()==null||cityname_txt.getText().equals("")){
+           JOptionPane.showMessageDialog(this,"Please enter City Name");
+           
+           return false;
+       }
+        
+         if(areacode_txt.getText()==null||areacode_txt.getText().equals("")){
+           JOptionPane.showMessageDialog(this,"Please enter Area Code");
+           return false;
+       }
+          if(state_combobox.getSelectedItem()==null||state_combobox.getSelectedItem().equals("")){
+           JOptionPane.showMessageDialog(this,"Please Select State");
+           
+           return false;
+       }
+           if(contactno1_txt.getText()==null||contactno1_txt.getText().equals("")){
+           JOptionPane.showMessageDialog(this,"Please enter Contact Number");
+           
+           return false;
+       }
+            if(gstno_txt.getText()==null||gstno_txt.getText().equals("")){
+           JOptionPane.showMessageDialog(this,"Please enter GST NO");
+           
+           return false;
+       }
+             if(maildid_txt.getText()==null||maildid_txt.getText().equals("")){
+           JOptionPane.showMessageDialog(this,"Please enter Email Address");
+           
+           return false;
+       }
+          
        
         return true;
     }
@@ -66,7 +99,6 @@ public class CustomerUi extends javax.swing.JInternalFrame {
         contactno1_lbl = new javax.swing.JLabel();
         contactno2_lbl = new javax.swing.JLabel();
         contactno3_lbl = new javax.swing.JLabel();
-        bankDetails_lbl = new javax.swing.JLabel();
         bankname_lbl = new javax.swing.JLabel();
         IFSCcode_lbl = new javax.swing.JLabel();
         acno_lbl = new javax.swing.JLabel();
@@ -103,36 +135,57 @@ public class CustomerUi extends javax.swing.JInternalFrame {
         Dr_btn = new javax.swing.JRadioButton();
         branch_txt = new javax.swing.JTextField();
 
-        setBorder(null);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setBorder(javax.swing.BorderFactory.createTitledBorder("Customer Creation"));
         setResizable(true);
 
-        Custname_lbl.setText("Cx Name");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Customer Creation", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 14))); // NOI18N
 
+        Custname_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        Custname_lbl.setText("Customer Name");
+
+        address_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         address_lbl.setText("Address");
 
+        cityname_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         cityname_lbl.setText("City Name");
 
+        areacode_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         areacode_lbl.setText("Area Code");
 
+        state_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         state_lbl.setText("State");
 
+        statecode_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         statecode_lbl.setText("State Code");
 
+        contactno1_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         contactno1_lbl.setText("Contact No 1");
 
+        contactno2_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         contactno2_lbl.setText("Contact No 2");
 
+        contactno3_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         contactno3_lbl.setText("Contact No 3");
 
-        bankDetails_lbl.setText("Bank Deatils");
-
+        bankname_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         bankname_lbl.setText("Bank Name");
 
+        IFSCcode_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         IFSCcode_lbl.setText("IFSC Code");
 
+        acno_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         acno_lbl.setText("A/C No");
 
+        branch_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         branch_lbl.setText("Branch");
+
+        custname_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custname_txtActionPerformed(evt);
+            }
+        });
 
         contactno2_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,6 +199,7 @@ public class CustomerUi extends javax.swing.JInternalFrame {
             }
         });
 
+        Submit_btn.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         Submit_btn.setText("Submit");
         Submit_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +207,7 @@ public class CustomerUi extends javax.swing.JInternalFrame {
             }
         });
 
+        clear_btn.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         clear_btn.setText("Clear");
         clear_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,8 +217,10 @@ public class CustomerUi extends javax.swing.JInternalFrame {
 
         state_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        gstno_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         gstno_lbl.setText("Gst No");
 
+        mailid_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         mailid_lbl.setText("Mail Id");
 
         maildid_txt.addActionListener(new java.awt.event.ActionListener() {
@@ -172,14 +229,19 @@ public class CustomerUi extends javax.swing.JInternalFrame {
             }
         });
 
+        DOB_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         DOB_lbl.setText("DOB");
 
+        proffesion_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         proffesion_lbl.setText("Proffesion ");
 
+        pincode_lbl.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         pincode_lbl.setText("Pin Code");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel1.setText("Anniversary DOB");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel2.setText("OpenningBalance");
 
         openBal_Txt.addActionListener(new java.awt.event.ActionListener() {
@@ -188,6 +250,7 @@ public class CustomerUi extends javax.swing.JInternalFrame {
             }
         });
 
+        Cr_btn.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         Cr_btn.setText("Cr.");
         Cr_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +258,7 @@ public class CustomerUi extends javax.swing.JInternalFrame {
             }
         });
 
+        Dr_btn.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         Dr_btn.setText("Dr.");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -202,98 +266,82 @@ public class CustomerUi extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(state_lbl)
+                    .addComponent(IFSCcode_lbl)
+                    .addComponent(branch_lbl)
+                    .addComponent(jLabel2)
+                    .addComponent(acno_lbl)
+                    .addComponent(bankname_lbl)
+                    .addComponent(pincode_lbl)
+                    .addComponent(proffesion_lbl)
+                    .addComponent(gstno_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contactno3_lbl)
+                    .addComponent(contactno1_lbl)
+                    .addComponent(statecode_lbl)
+                    .addComponent(DOB_lbl)
+                    .addComponent(areacode_lbl)
+                    .addComponent(cityname_lbl)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(contactno3_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(contactno2_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(gstno_lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(contactno1_lbl)
-                                    .addComponent(statecode_lbl)
-                                    .addComponent(address_lbl)
-                                    .addComponent(Custname_lbl)
-                                    .addComponent(cityname_lbl)
-                                    .addComponent(areacode_lbl)
-                                    .addComponent(state_lbl)))
-                            .addComponent(mailid_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pincode_lbl)
-                            .addComponent(bankname_lbl)
-                            .addComponent(branch_lbl)
-                            .addComponent(DOB_lbl)
-                            .addComponent(acno_lbl)
-                            .addComponent(IFSCcode_lbl)
-                            .addComponent(bankDetails_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(proffesion_lbl))
-                        .addGap(18, 18, 18)
+                            .addComponent(Custname_lbl)
+                            .addComponent(address_lbl)
+                            .addComponent(contactno2_lbl)
+                            .addComponent(mailid_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(address_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(custname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cityname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(areacode_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(state_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(statecode_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(contactno1_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(contactno2_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(contactno3_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gstno_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(maildid_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(Dob_DatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(AnniversaryDob_DatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(AnniversaryDob_DatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(proffesion_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pincode_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bankname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(address_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(custname_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cityname_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(areacode_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(state_combobox, javax.swing.GroupLayout.Alignment.LEADING, 0, 213, Short.MAX_VALUE)
-                                    .addComponent(statecode_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(contactno1_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(contactno2_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(contactno3_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(gstno_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(maildid_txt, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(18, 18, 18)
-                                .addComponent(branch_txt))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Cr_btn)
-                                        .addGap(4, 4, 4)
-                                        .addComponent(Dr_btn)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(openBal_Txt, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(pincode_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                                        .addComponent(proffesion_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(bankname_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(Ifsccode_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(acno_txt, javax.swing.GroupLayout.Alignment.LEADING)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(clear_btn))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Submit_btn)
-                                        .addGap(0, 69, Short.MAX_VALUE))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(Submit_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clear_btn))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(Cr_btn)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(Dr_btn)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(openBal_Txt, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
+                                .addComponent(branch_txt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(acno_txt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Ifsccode_txt, javax.swing.GroupLayout.Alignment.LEADING)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Custname_lbl)
                     .addComponent(custname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(address_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(address_lbl))
+                    .addComponent(address_lbl, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cityname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cityname_lbl))
+                    .addComponent(cityname_lbl)
+                    .addComponent(cityname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(areacode_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,63 +350,52 @@ public class CustomerUi extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(state_lbl)
                     .addComponent(state_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(statecode_lbl)
                     .addComponent(statecode_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(contactno1_lbl)
                     .addComponent(contactno1_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contactno2_lbl)
-                    .addComponent(contactno2_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contactno3_lbl)
-                    .addComponent(contactno3_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(gstno_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gstno_lbl)
-                    .addComponent(branch_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(maildid_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mailid_lbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(DOB_lbl)
-                        .addComponent(Dob_DatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(AnniversaryDob_DatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(contactno2_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contactno2_lbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(contactno3_lbl)
+                    .addComponent(contactno3_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(gstno_lbl)
+                    .addComponent(gstno_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(maildid_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mailid_lbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DOB_lbl)
+                    .addComponent(Dob_DatePicker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addComponent(AnniversaryDob_DatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(proffesion_lbl)
                     .addComponent(proffesion_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pincode_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pincode_lbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bankDetails_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Submit_btn)
-                        .addGap(16, 16, 16)))
+                .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bankname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bankname_lbl))
+                    .addComponent(pincode_lbl)
+                    .addComponent(pincode_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bankname_lbl)
+                    .addComponent(bankname_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IFSCcode_lbl)
-                    .addComponent(Ifsccode_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clear_btn))
+                    .addComponent(Ifsccode_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(acno_lbl)
@@ -366,28 +403,33 @@ public class CustomerUi extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(branch_lbl)
-                    .addComponent(openBal_Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(branch_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(Cr_btn)
                     .addComponent(Dr_btn)
-                    .addComponent(Cr_btn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(57, Short.MAX_VALUE))
+                    .addComponent(openBal_Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Submit_btn)
+                    .addComponent(clear_btn))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(264, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(165, 165, 165))
+                .addGap(0, 883, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 48, Short.MAX_VALUE))
+                .addGap(0, 160, Short.MAX_VALUE))
         );
 
         pack();
@@ -413,20 +455,23 @@ public class CustomerUi extends javax.swing.JInternalFrame {
           if(!validateCustomer()){
               return;
           }
+         
+        
           customer.setCustName(custname_txt.getText());
           customer.setAdress(address_txt.getText());
+          customer.setCityName(cityname_txt.getText());
           customer.setAreaCode(areacode_txt.getText());
           customer.setState((String)state_combobox.getSelectedItem());
           customer.setStateCode(statecode_txt.getText());
           customer.setContactNo1(contactno1_txt.getText());
-          customer.setContactNo1(contactno2_txt.getText());
+          customer.setContactNo2(contactno2_txt.getText());
           customer.setContactNo3(contactno3_txt.getText());
           customer.setGstin(gstno_txt.getText());
           customer.setEmail(maildid_txt.getText());
           customer.setDob(new java.sql.Date(Dob_DatePicker.getDate().getTime()));
           customer.setAnnivarsaryDate(new java.sql.Date(AnniversaryDob_DatePicker.getDate().getTime()));
           customer.setProfession(proffesion_txt.getText());
-          customer.setPincode(Integer.parseInt(pincode_txt.getText()));
+          customer.setPincode(Integer.valueOf((String)(pincode_txt.getText())));
           customer.setBankName(bankname_txt.getText());
           customer.setAccNo(acno_txt.getText());
           customer.setIfsc(Ifsccode_txt.getText());
@@ -448,6 +493,10 @@ public class CustomerUi extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Cr_btnActionPerformed
 
+    private void custname_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custname_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_custname_txtActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.jdesktop.swingx.JXDatePicker AnniversaryDob_DatePicker;
@@ -465,7 +514,6 @@ public class CustomerUi extends javax.swing.JInternalFrame {
     private javax.swing.JTextField address_txt;
     private javax.swing.JLabel areacode_lbl;
     private javax.swing.JTextField areacode_txt;
-    private javax.swing.JLabel bankDetails_lbl;
     private javax.swing.JLabel bankname_lbl;
     private javax.swing.JTextField bankname_txt;
     private javax.swing.JLabel branch_lbl;

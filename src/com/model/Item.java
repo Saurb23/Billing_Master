@@ -11,7 +11,7 @@ package com.model;
  */
 public class Item {
 
-    public Item(String Itemname, String hsn, String unit, String style, String color, String size, String group, String subgroup, String gstPer, String gstgroup, double sellingprice, String barcode, double purchaseprice, double openingstock) {
+    public Item(String Itemname, String hsn, String unit, String style, String color, String size, String group, String subgroup, int gstPer, String gstgroup, double sellingprice, String barcode, double purchaseprice, double openingstock) {
         this.Itemname = Itemname;
         this.hsn = hsn;
         this.unit = unit;
@@ -40,7 +40,15 @@ public class Item {
     public void setItemname(String Itemname) {
         this.Itemname = Itemname;
     }
-    long Id;
+
+    public long getId() {
+        return Id;
+    }
+
+    public void setId(long Id) {
+        this.Id = Id;
+    }
+     long Id;
      String hsn;
     String unit;
     String style;
@@ -48,7 +56,7 @@ public class Item {
     String size;
     String group;
     String subgroup;
-    String gstPer;
+    int gstPer;
     String gstgroup;
     double sellingprice;
     String barcode;
@@ -111,11 +119,11 @@ public class Item {
         this.subgroup = subgroup;
     }
 
-    public String getGstPer() {
+    public int getGstPer() {
         return gstPer;
     }
 
-    public void setGstPer(String gstPer) {
+    public void setGstPer(int gstPer) {
         this.gstPer = gstPer;
     }
 
