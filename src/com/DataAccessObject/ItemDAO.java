@@ -8,6 +8,7 @@ package com.DataAccessObject;
 import com.database.utility.DBAccessUtility;
 import com.model.Item;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class ItemDAO {
     ResultSet rs = null;
 	public boolean addProduct(Item item) {
         boolean result=false;
-	String stmt1 = "insert into itemMaster(itemName,HSN,unit,style,colors,size,group,subGroup,gst,gstgrp,sellPrice,barcode,buyPrice,openingStock) values('"+item.getItemname()+"','"+ item.getHsn() + "','"+item.getUnit()+"','"+item.getStyle()+"','"+item.getColor()+"','"+item.getSize()+"','"+item.getGroup()+"','"+item.getSubgroup()+"',"+item.getGstPer()+",'"+item.getGstgroup()+"',"+item.getSellingprice()+",'"+item.getBarcode()+"',"+item.getPurchaseprice()+","+item.getOpeningstock()+")";
+	String stmt1 = "insert into itemMaster(itemName,HSN,unit,style,colors,size,grp,subGroup,gst,gstgrp,sellPrice,barcode,buyPrice,openingStock) values('"+item.getItemname()+"','"+ item.getHsn() + "','"+item.getUnit()+"','"+item.getStyle()+"','"+item.getColor()+"','"+item.getSize()+"','"+item.getGroup()+"','"+item.getSubgroup()+"',"+item.getGstPer()+",'"+item.getGstgroup()+"',"+item.getSellingprice()+",'"+item.getBarcode()+"',"+item.getPurchaseprice()+","+item.getOpeningstock()+")";
                  try {
             DBAccessUtility.dbExecuteUpdate(stmt1);
             result=true;
@@ -37,7 +38,7 @@ public class ItemDAO {
         public boolean updateItem(Item item) {
 		boolean result=false;
 		String stmt ="update itemMaster set itemName='"+item.getItemname()+"',HSN='"+item.getHsn()+"',unit='"+item.getUnit()+"',style='"+item.getStyle()+"',colors='"+item.getColor()+"'"
-				+",size='"+item.getSize()+"',group='"+item.getGroup()+"',subGroup='"+item.getSubgroup()+"',gst="+item.getGstPer()+",gstgrp='"+item.getGstgroup()+"',sellPrice="+item.getSellingprice()+",barcode='"+item.getBarcode()+"',buyPrice="+item.getPurchaseprice()+",openingStock="+item.getOpeningstock()+" "
+				+",size='"+item.getSize()+"',grp='"+item.getGroup()+"',subGroup='"+item.getSubgroup()+"',gst="+item.getGstPer()+",gstgrp='"+item.getGstgroup()+"',sellPrice="+item.getSellingprice()+",barcode='"+item.getBarcode()+"',buyPrice="+item.getPurchaseprice()+",openingStock="+item.getOpeningstock()+" "
 				+ " where id="+item.getId()+"";
 		try {
 			DBAccessUtility.dbExecuteUpdate(stmt);
@@ -72,7 +73,7 @@ public class ItemDAO {
 				item.setStyle(rs.getString("style"));
 				item.setColor(rs.getString("colors"));
 				item.setSize(rs.getString("size"));
-				item.setGroup(rs.getString("group"));
+				item.setGroup(rs.getString("grp"));
 				item.setSubgroup(rs.getString("subGroup"));
 				item.setGstPer(rs.getInt("gst"));
                                 item.setGstgroup(rs.getString("gstgrp"));
@@ -115,7 +116,7 @@ public class ItemDAO {
 				item.setStyle(rs.getString("style"));
                                 item.setColor(rs.getString("colors"));
 				item.setSize(rs.getString("size"));
-				item.setGroup(rs.getString("group"));
+				item.setGroup(rs.getString("grp"));
                                 item.setSubgroup(rs.getString("subGroup"));
 				item.setGstPer(rs.getInt("gst"));
 				item.setGstgroup(rs.getString("gstgrp"));
@@ -166,4 +167,57 @@ public class ItemDAO {
 		}
 		return result;
                 }
+                
+        public List<String> getALLFields(){
+                    List<String> fieldList= new ArrayList<>();
+                    String stmt="select * from itemMaster";
+        try {
+            rs=DBAccessUtility.dbExecuteQuery(stmt);
+            ResultSetMetaData rsmeta=rs.getMetaData();
+            int count=rsmeta.getColumnCount();
+            for(int i=1;i<=count;i++){
+                fieldList.add(rsmeta.getColumnName(i));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return fieldList;
+                    
+          }
+                
+        public List<Item> getSearchable(String searchTxt,String comboTxt){
+            List<Item> searchList= new ArrayList<>();
+            String stmt="select * from itemMaster where "+comboTxt+" Like '%"+searchTxt+"%'";
+        try {
+            rs=DBAccessUtility.dbExecuteQuery(stmt);
+            while(rs.next()){
+                Item item= new Item();
+                item.setId(rs.getLong(1));
+                item.setItemname(rs.getString(2));
+                item.setHsn(rs.getString(3));
+                item.setUnit(rs.getString(4));
+                item.setStyle(rs.getString(5));
+                item.setColor(rs.getString(6));
+                item.setSize(rs.getString(7));
+                item.setGroup(rs.getString(8));
+                item.setSubgroup(rs.getString(9));
+                item.setGstPer(rs.getInt(10));
+                item.setGstgroup(rs.getString(11));
+                item.setSellingprice(rs.getDouble(12));
+                item.setBarcode(rs.getString(13));
+                item.setPurchaseprice(rs.getDouble(14));
+                item.setOpeningstock(rs.getDouble(15));
+                searchList.add(item);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+          return searchList;
+        }
 }
